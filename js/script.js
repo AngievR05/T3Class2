@@ -60,16 +60,13 @@
 // FakeLog(useableArray.reduce((total, x) => total += x));
 
 function calculateAverage(readingsString) {
-    // Split the input string into an array of strings representing the readings
+
     let readingsArray = readingsString.split(',').map(Number);
 
-    // Calculate the sum of all oxygen readings
     let total = readingsArray.reduce((sum, reading) => sum + reading, 0);
-    
-    // Calculate the average oxygen level
+
     let average = total / readingsArray.length;
-    
-    // Check if the average oxygen level is within the safe range
+
     if (average >= 19.5 && average <= 23.5) {
         return `The average oxygen level is ${average.toFixed(2)}%. It is within the safe range.`;
     } else {
@@ -77,7 +74,6 @@ function calculateAverage(readingsString) {
     }
 }
 
-// Example usage with the provided data as a string:
 const oxygenReadingsString = `19.45781169874675, 23.870565988206803, 20.52379212069659, 20.730682668963794,
 18.659291043109494, 19.77949047739719, 22.821768480045765, 24.741832651909537, 20.035275235795584,
 25.49609064990466, 19.126526150833204, 23.0941330302319, 19.564065658707438, 24.702737494658574,
@@ -93,7 +89,6 @@ const oxygenReadingsString = `19.45781169874675, 23.870565988206803, 20.52379212
 console.log(calculateAverage(oxygenReadingsString));
 
 
-// Array of calibration values
 let calibrationValues = [
     19.45781169874675, 23.870565988206803, 20.52379212069659, 20.730682668963794,
     18.659291043109494, 19.77949047739719, 22.821768480045765, 24.741832651909537,
@@ -110,7 +105,6 @@ let calibrationValues = [
     24.523364177609967, 20.786235047498327
 ];
 
-// Calculate the sum of all calibration values
 let sumCalibrationValues = calibrationValues.reduce((sum, value) => sum + value, 0);
 
 console.log(`The sum of all calibration values is: ${sumCalibrationValues}`);
